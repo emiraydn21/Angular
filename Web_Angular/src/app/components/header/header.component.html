@@ -5,10 +5,15 @@
 
 
   <ul class="header-menu" style="margin-left: auto;" *ngIf="!(isHandset$ | async)">
-    <li>
-      <a routerLink="/" routerLinkActive="active" 
+<!--   
+     <li>
+      <a routerLink="/home" routerLinkActive="active" 
       [routerLinkActiveOptions]="{exact:true}" 
       fxHide fxShow.gt-sm>Anasayfa</a>
+    </li>
+  -->
+    <li>
+      <a routerLink="/anasayfa" routerLinkActive="active" fxHide fxShow.gt-sm>Anasayfa</a>
     </li>
     <li>
       <a routerLink="/customer" routerLinkActive="active" fxHide fxShow.gt-sm>Müşteriler</a>
@@ -36,7 +41,7 @@
   <button mat-menu-item routerLink="/customer">Müşteri</button>
   <button mat-menu-item routerLink="/products">Ürünler</button>
   <button mat-menu-item routerLink="/other">Diğer</button>
-  <button mat-menu-item routerLink="/other">Login</button>
-
+ <!-- <button mat-menu-item routerLink="/other">Login</button> -->
+ 
 
 </mat-menu>

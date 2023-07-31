@@ -71,10 +71,9 @@
 </div>
 
 
-
 <div class="d-flex justify-content-center" style="margin-top: 0;">
   <div class="table-responsive" style="margin-top: 40px;">
-    <table class="table text-center custom-table" style="width: 50%; margin: 5px   auto; ">
+    <table class="table text-center custom-table" style="width: 50%; margin: 5px auto;">
       <thead class="cell">
         <tr>
           <th class="sticky-header" style="top: -20px;">First Name</th>
@@ -85,21 +84,24 @@
           <th class="sticky-header" style="top: -20px;">Actions</th>
         </tr>
       </thead>
-      <tbody class="scrollable-body" >
+      <tbody class="scrollable-body">
         <tr *ngFor="let customer of getFilteredCustomers()">
-          <td>{{ customer.firstName | uppercase }}</td>
-          <td>{{ customer.lastName }}</td>
-          <td>{{ customer.gender }}</td>
-          <td>{{ customer.dob }}</td>
-          <td>{{ customer.address }}</td>
-          <td>
-            <button type="button" class="btn btn-success mr-1" (click)="setUpdate(customer)">
-              <i class="fas fa-edit"></i>
-            </button>
-            <button type="button" class="btn btn-danger" (click)="setDelete(customer)">
-              <i class="fas fa-trash"></i>
-            </button>
-          </td>
+          <!-- Check if all required fields have valid data before rendering the row -->
+          <ng-container *ngIf="customer.firstName && customer.lastName && customer.gender && customer.dob && customer.address">
+            <td>{{ customer.firstName | uppercase }}</td>
+            <td>{{ customer.lastName }}</td>
+            <td>{{ customer.gender }}</td>
+            <td>{{ customer.dob }}</td>
+            <td>{{ customer.address }}</td>
+            <td>
+              <button type="button" class="btn btn-success mr-1" (click)="setUpdate(customer)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="btn btn-danger" (click)="setDelete(customer)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </ng-container>
         </tr>
       </tbody>
     </table>

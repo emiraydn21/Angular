@@ -3,7 +3,26 @@
 <main>
     <h1 class="page-title">Diğer</h1>
 </main>
+<button>Kayıtlı Kullanıcılar</button>
 
 
-
-  
+<div class="d-flex justify-content-center" style="margin-top: 0;">
+  <div class="table-responsive" style="margin-top: 40px;">
+    <table class="table text-center custom-table" style="width: 50%; margin: 5px auto;">
+      <thead class="cell">
+        <tr>
+          <th class="sticky-header" style="top: -20px;">Username</th>
+          <th class="sticky-header" style="top: -20px;">Email</th>
+          <!-- Add other desired fields here -->
+        </tr>
+      </thead>
+      <tbody class="scrollable-body">
+        <tr *ngFor="let customer of customerArray">
+          <td>{{ customer.username }}</td>
+          <td>{{ customer.email }}</td>
+          <!-- Display other desired fields here -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -37,6 +37,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import {OtherComponent} from './components/other/other.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AnasayfaComponent } from './components/anasayfa/anasayfa.component';
 
 
 
@@ -52,6 +53,8 @@ import { SignupComponent } from './components/signup/signup.component';
     OtherComponent,
     LoginComponent,
     SignupComponent,
+    AnasayfaComponent,
+
     
     
   ],
@@ -80,7 +83,9 @@ import { SignupComponent } from './components/signup/signup.component';
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule // Add HttpClientModule to the imports array
+
     
     
   ],
